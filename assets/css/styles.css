@@ -781,3 +781,73 @@ body.has-mobile-bar { padding-bottom: calc(76px + env(safe-area-inset-bottom)); 
 }
 .feature-row:nth-child(even) .visual { background: linear-gradient(150deg, var(--brand-purple), var(--brand-deep)); }
 .feature-row:nth-child(even) .visual .icon { color: var(--brand-cyan); }
+
+/* ==========================================================================
+   Photography (v1.1)
+   ========================================================================== */
+.photo { display: block; position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--purple-100); }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.photo::after { /* subtle brand grade for a cohesive look */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,178,232,.06) 0%, rgba(50,32,84,0) 45%, rgba(50,32,84,.28) 100%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .step--media:hover .photo img, .card--media:hover .photo img, .feature-row:hover .photo img { transform: scale(1.04); }
+}
+
+/* How-it-works steps with photos */
+.step--media { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.step-media { position: relative; aspect-ratio: 4 / 3; }
+.step--media .step-num { top: auto; bottom: .9rem; right: 1rem; z-index: 1; color: rgba(255,255,255,.92); text-shadow: 0 2px 12px rgba(28,18,51,.45); }
+.step-body { position: relative; padding: 0 1.5rem 1.75rem; }
+.step-body .icon-badge { margin-top: -28px; position: relative; z-index: 1; border: 4px solid var(--white); width: 60px; height: 60px; box-sizing: border-box; }
+.step--media h3 { margin-top: .9rem; }
+
+/* Service cards with photos */
+.card--media { padding-top: 0; overflow: hidden; }
+.card-media {
+  position: relative; aspect-ratio: 3 / 2;
+  margin: 0 calc(-1 * clamp(1.5rem, 1.2rem + 1vw, 2.25rem));
+}
+.icon-badge--float { margin-top: -28px; position: relative; z-index: 1; border: 4px solid var(--white); width: 60px; height: 60px; box-sizing: border-box; }
+.card--media h3 { margin-top: 1rem; }
+
+/* Home "why" panel with photo background */
+.why-panel--photo { padding: 1.5rem; }
+.why-panel--photo .why-photo { position: absolute; inset: 0; z-index: -2; }
+.why-panel--photo::before { z-index: -1; inset: 0; background: linear-gradient(160deg, rgba(62,21,123,.35) 0%, rgba(50,32,84,.55) 55%, rgba(28,18,51,.85) 100%); }
+.why-panel--photo .photo::after { display: none; }
+.why-panel--photo .stack { align-self: end; }
+
+/* Framed photos (about) */
+.photo-frame { position: relative; margin: 0; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 5 / 4; box-shadow: var(--shadow); }
+.photo-frame--sm { aspect-ratio: 16 / 10; }
+.photo-chip {
+  display: inline-flex; align-items: center; gap: .7rem; padding: .7rem .95rem; border-radius: 14px;
+  background: rgba(255,255,255,.96); color: var(--ink); box-shadow: var(--shadow-lg); font-size: .8125rem; line-height: 1.3;
+}
+.photo-chip strong { display: block; font-family: var(--font-display); font-size: .95rem; }
+.photo-chip .icon { color: var(--brand-purple); width: 22px; height: 22px; }
+.photo-frame .photo-chip { position: absolute; left: 1rem; bottom: 1rem; z-index: 1; max-width: calc(100% - 2rem); }
+
+/* Why-choose-us rows with photos */
+.feature-row .visual--photo { position: relative; overflow: hidden; padding: 0; background: var(--purple-100); }
+.feature-row .visual--photo .visual-icon {
+  position: absolute; left: .85rem; bottom: .85rem; z-index: 1; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px;
+  background: rgba(255,255,255,.95); box-shadow: var(--shadow);
+}
+.feature-row .visual--photo .visual-icon .icon { width: 24px; height: 24px; stroke-width: 2; color: var(--brand-purple); }
+.feature-row:nth-child(even) .visual--photo { background: var(--purple-100); }
+
+/* ---------- Service-area map ---------- */
+.section--map { padding-top: 0; }
+.map-card { margin: 0; }
+.map-frame {
+  position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4 / 3;
+  background: var(--purple-50); border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+@media (min-width: 760px) { .map-frame { aspect-ratio: 21 / 9; } }
+.map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: saturate(.85); }
+.map-caption { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; margin-top: 1rem; }
+.map-chip { box-shadow: var(--shadow-sm); border: 1px solid var(--line); }
+@media (max-width: 599px) { .step-media { aspect-ratio: 16 / 10; } .card-media { aspect-ratio: 16 / 10; } }

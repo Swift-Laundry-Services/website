@@ -15,7 +15,7 @@ index.html            Home (hero, how it works, services, why us, wash & fold pr
 about.html            About us, areas we serve
 services.html         Services, wash & fold / dry cleaning / ironing prices, industries we serve
 why-choose-us.html    Why choose us
-contact.html          Contact details + contact / free-quote form
+contact.html          Contact details, service-area map, contact / free-quote form
 order.html            "Order a pickup" form
 login.html            Login / create account (placeholder: accounts are "coming soon")
 404.html              Not-found page (works at any URL depth on GitHub Pages)
@@ -28,6 +28,7 @@ assets/
   js/main.js          Behaviour (menu, forms, price tables, animations)
   fonts/              Self-hosted Montserrat + Inter (variable, latin), SIL OFL
   img/                Logos, icons, Open Graph image
+  img/photos/         Photography (WebP 480/800/1200 + JPG 800 fallback)
 .github/workflows/pages.yml   GitHub Pages deployment
 ```
 
@@ -59,6 +60,7 @@ All of these are in **`assets/js/site-config.js`**. Search it for `TODO`.
 | Dry cleaning prices | `pricing.dryCleaning` |
 | Ironing prices | `pricing.ironing` |
 | Where forms send data | `forms.endpoint` or `forms.email` (see below) |
+| Contact-page map | `map.embedUrl`, `map.linkUrl`, `map.caption` (see below) |
 
 **Price confirmation:** each price has `confirmed: true/false`. While any price in a table is `false`, the site shows a small
 "prices are being finalized, call to confirm" note under that table. Set each one to `true` once it's checked.
@@ -76,6 +78,19 @@ There is **no backend** yet. The forms validate input in the browser and then do
    **Text my request** button (an SMS to the business number with the details filled in) and a **Call** button.
 
 The **Login / Create account** page is a placeholder. Submitting shows "Customer accounts are coming soon".
+
+### Service-area map (Contact page)
+
+The Contact page shows a keyless OpenStreetMap embed centred on Garfield Heights, OH, because there is no public street address yet.
+To show the real address, set `map.embedUrl` in `site-config.js` to a Google Maps embed, for example
+`https://www.google.com/maps?q=123+Main+St,+Garfield+Heights,+OH&output=embed`, and point `map.linkUrl` at the matching
+map page. `map.caption` changes the caption under the map. No API key is needed for either option.
+
+### Photos
+
+Photos live in `assets/img/photos/` as `NAME-480.webp`, `NAME-800.webp`, `NAME-1200.webp` and a `NAME-800.jpg` fallback,
+all 3:2. To replace a photo, export new files with the **same names and sizes** and nothing else needs to change.
+If you change what a photo shows, also update its `alt` text in the HTML.
 
 ### Switching to the custom domain later
 
@@ -111,6 +126,25 @@ Fonts: **Montserrat** (headings, the same family as the logo wordmark) and **Int
 
 ## Image credits
 
-No stock photos are used. All imagery is the Swift Laundry Services logo plus CSS/SVG illustration.
+Photos are free stock photos from [Pexels](https://www.pexels.com), used under the
+[Pexels License](https://www.pexels.com/license/) (free for commercial use, no attribution required; credited here anyway).
+They are **not AI-generated** and **not photos of the Swift Laundry Services team**. They are illustrative only, so swap in real
+photos of your team, van and work whenever you have them (same file names, see "Photos" above).
+
+| File (`assets/img/photos/`) | Used on | Photographer | Source |
+| --- | --- | --- | --- |
+| `photo-schedule` | How it works, step 1 (Home, Why choose us) | Ron Lach | [Pexels 9603489](https://www.pexels.com/photo/person-holding-white-leather-tote-bag-9603489/) |
+| `photo-pickup` | How it works, step 2; Why choose us, "Flexible subscriptions" | Karolina Grabowska (Kaboompics) | [Pexels 4959868](https://www.pexels.com/photo/photo-of-a-person-s-hands-holding-a-basket-4959868/) |
+| `photo-care` | How it works, step 3; About, sidebar; Why choose us, "Personalized local care" | cottonbro studio | [Pexels 6466227](https://www.pexels.com/photo/person-holding-a-stack-of-white-towels-6466227/) |
+| `photo-delivered` | How it works, step 4 | RDNE Stock project | [Pexels 8581029](https://www.pexels.com/photo/folded-garments-held-by-a-person-8581029/) |
+| `photo-wash-fold` | Wash & Fold service card (Home, Services) | Berna | [Pexels 35009420](https://www.pexels.com/photo/stack-of-folded-corduroy-fabrics-in-neutral-tones-35009420/) |
+| `photo-dry-cleaning` | Dry Cleaning service card (Home, Services) | Craig Adderley | [Pexels 1682699](https://www.pexels.com/photo/close-up-photo-of-hang-clothes-in-wardrobe-1682699/) |
+| `photo-ironing` | Ironing service card (Home, Services) | cottonbro studio | [Pexels 5901624](https://www.pexels.com/photo/man-with-iron-5901624/) |
+| `photo-folded-shirts` | Home, "Why choose Swift" panel | Polina Tankilevitch | [Pexels 4440574](https://www.pexels.com/photo/a-person-holding-a-stack-of-neatly-folded-shirts-4440574/) |
+| `photo-team` | About, "Who we are" | Tima Miroshnichenko | [Pexels 8774441](https://www.pexels.com/photo/person-in-blue-and-white-pants-standing-beside-white-metal-cart-8774441/) |
+| `photo-towels` | Why choose us, "Transparent pricing" | Karolina Grabowska (Kaboompics) | [Pexels 4210372](https://www.pexels.com/photo/stack-of-light-beige-towels-on-white-stool-4210372/) |
+| `photo-eco` | Why choose us, "Eco-friendly options" | Ron Lach | [Pexels 10566526](https://www.pexels.com/photo/close-up-view-of-cleaning-products-10566526/) |
+
+Map data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors (shown inside the map embed).
 Icons are drawn in the style of, and partly adapted from, [Lucide](https://lucide.dev) (ISC licence).
 Fonts: [Montserrat](https://github.com/JulietaUla/Montserrat) and [Inter](https://github.com/rsms/inter), SIL Open Font License 1.1 (see `assets/fonts/`).

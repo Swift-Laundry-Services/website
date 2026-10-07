@@ -124,6 +124,31 @@
   </div>
 </section>
 
+
+<section class="section section--map" id="service-area" aria-labelledby="map-title">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow">Where we work</span>
+      <h2 id="map-title">Our service area</h2>
+      <p>We pick up and deliver across Garfield Heights and the surrounding Cleveland suburbs.</p>
+    </div>
+    <figure class="map-card reveal">
+      <div class="map-frame">
+        <!-- MAP: the embed URL is set in assets/js/site-config.js (map.embedUrl). This src is the no-JS fallback.
+             To show your real address later, use e.g. https://www.google.com/maps?q=YOUR+STREET+ADDRESS,+Garfield+Heights,+OH&output=embed -->
+        <iframe data-map
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-81.7600%2C41.3550%2C-81.4500%2C41.4800&amp;layer=mapnik&amp;marker=41.4170%2C-81.6057"
+          title="Map of Garfield Heights, Ohio and the surrounding Cleveland suburbs"
+          width="1200" height="600" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <figcaption class="map-caption">
+        <span class="photo-chip map-chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-map-caption>Serving Garfield Heights &amp; the Cleveland suburbs</span></span>
+        <a class="link-arrow" data-map-link href="https://www.openstreetmap.org/?mlat=41.4170&amp;mlon=-81.6057#map=12/41.4170/-81.6057" target="_blank" rel="noopener">Open larger map <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="section section--tint" id="contact-form" aria-labelledby="form-title">
   <div class="container order-layout">
     <div class="form-card reveal">

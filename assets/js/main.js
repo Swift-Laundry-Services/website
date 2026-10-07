@@ -48,6 +48,12 @@
   });
   $$("[data-social-row]").forEach(function (row) { row.hidden = !$$("[data-social]", row).some(function (a) { return !a.hidden; }); });
 
+  /* ---------- Service-area map ---------- */
+  var MAP = CFG.map || {};
+  $$("[data-map]").forEach(function (f) { if (MAP.embedUrl && f.getAttribute("src") !== MAP.embedUrl) f.setAttribute("src", MAP.embedUrl); });
+  $$("[data-map-link]").forEach(function (a) { if (MAP.linkUrl) a.href = MAP.linkUrl; });
+  $$("[data-map-caption]").forEach(function (el) { if (MAP.caption) el.textContent = MAP.caption; });
+
   /* ---------- Pricing ---------- */
   var bagSvg = function (scale) {
     var h = Math.round(30 + scale * 22);

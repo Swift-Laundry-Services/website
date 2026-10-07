@@ -16,6 +16,19 @@ window.SWIFT_CONFIG = {
     hours: ""                           // TODO(owner, optional): opening / pickup hours. Hidden while empty.
   },
 
+  /* ------------------------------------------------------------------------
+     SERVICE-AREA MAP (Contact page)
+     No street address yet, so the map shows Garfield Heights & surroundings.
+     To show your real address later, swap embedUrl for a Google Maps embed:
+       "https://www.google.com/maps?q=" + encodeURIComponent("123 Main St, Garfield Heights, OH") + "&output=embed"
+     and point linkUrl at the matching map page.
+     ------------------------------------------------------------------------ */
+  map: {
+    embedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=-81.7600%2C41.3550%2C-81.4500%2C41.4800&layer=mapnik&marker=41.4170%2C-81.6057",
+    linkUrl: "https://www.openstreetmap.org/?mlat=41.4170&mlon=-81.6057#map=12/41.4170/-81.6057",
+    caption: "Serving Garfield Heights & the Cleveland suburbs"
+  },
+
   social: {
     instagram: "",                      // TODO(owner): full profile URL. Icons stay hidden while empty.
     x: "",                              // TODO(owner)

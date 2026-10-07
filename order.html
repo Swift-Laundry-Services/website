@@ -6,7 +6,7 @@
 <title>Order a Pickup | Swift Laundry Services</title>
 <meta name="description" content="Request a laundry pickup in Garfield Heights and the Cleveland suburbs. Wash & fold, dry cleaning and ironing — back within as little as 24 hours.">
 <link rel="canonical" href="https://swift-laundry-services.github.io/website/order.html">
-<meta name="theme-color" content="#322054">
+<meta name="theme-color" content="#3E157B">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swift Laundry Services">
 <meta property="og:title" content="Order a Pickup | Swift Laundry Services">
@@ -25,67 +25,56 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="assets/fonts/montserrat-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css">
-<script>document.documentElement.classList.add("js")</script>
 </head>
-<body class="has-mobile-bar">
+<body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="container header-inner">
+  <div class="bar">
     <a class="brand" href="index.html" aria-label="Swift Laundry Services — home">
-      <img src="assets/img/logo.svg" alt="Swift Laundry Services" width="156" height="54">
+      <img src="assets/img/logo.svg" alt="Swift Laundry Services" width="324" height="112" data-logo>
     </a>
     <nav class="primary-nav" aria-label="Main">
       <ul class="nav-list">
-          <li><a class="nav-link" href="about.html">About Us</a></li>
-          <li><a class="nav-link" href="services.html">Services</a></li>
-          <li><a class="nav-link" href="why-choose-us.html">Why Choose Us</a></li>
-          <li><a class="nav-link" href="contact.html">Contact Us</a></li>
-          <li><a class="nav-link" href="login.html">Login</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="login.html">Login</a></li>
       </ul>
     </nav>
-    <div class="header-actions">
-      <a class="icon-btn header-call" href="tel:+17144027530" data-href="tel" aria-label="Call us on (714) 402-7530"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
-      <a class="btn btn--primary btn--sm header-cta" href="order.html">Order a pickup</a>
-      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-        <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
+    <a class="btn btn--purple header-member" href="login.html#create">Become a member</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+      <svg class="i-open" viewBox="0 0 22 16" aria-hidden="true" focusable="false"><path d="M0 1h22M0 8h22M0 15h22" stroke="currentColor" stroke-width="2"/></svg>
+      <svg class="i-close" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><path d="M3 3l16 16M19 3 3 19" stroke="currentColor" stroke-width="2.2"/></svg>
+    </button>
+    <nav class="menu-panel" id="site-menu" aria-label="Menu" hidden>
+      <ul>
+        <li class="menu-main"><a href="about.html">About Us</a></li>
+        <li class="menu-main"><a href="services.html">Services</a></li>
+        <li class="menu-main"><a href="why-choose-us.html">Why Choose Us</a></li>
+        <li class="menu-main"><a href="contact.html">Contact Us</a></li>
+        <li><a href="login.html">Login / Create account</a></li>
+        <li><a href="order.html" aria-current="page">Order a pickup</a></li>
+        <li><a href="tel:+17144027530" data-href="tel">Call <span data-bind="phone">(714) 402-7530</span></a></li>
+      </ul>
+      <a class="btn btn--cyan" href="login.html#create">Become a member</a>
+    </nav>
   </div>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
-    <ul>
-      <li><a href="about.html">About Us<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-      <li><a href="services.html">Services<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-      <li><a href="why-choose-us.html">Why Choose Us<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-      <li><a href="contact.html">Contact Us<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-      <li><a href="login.html">Login<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
-    </ul>
-    <a class="btn btn--primary" href="order.html">Order a pickup</a>
-    <a class="btn btn--outline" href="tel:+17144027530" data-href="tel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-bind="phone">(714) 402-7530</span></a>
-  </nav>
 </header>
 <main id="main">
-<section class="page-hero on-dark">
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Order a Pickup</span></li></ol></nav>
-    <h1>Order a pickup</h1>
-    <p>Tell us what you need and where to collect it. We’ll take it from there.</p>
-  </div>
-  <div class="cloud-edge " aria-hidden="true">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false">
-      <path class="c-back" d="M0 120V84C6 32 119 32 125 84C132 46 262 46 269 84C276 31 395 31 402 84C409 30 535 30 542 84C549 48 682 48 689 84C696 50 830 50 837 84C845 35 997 35 1005 84C1011 33 1125 33 1131 84C1137 44 1249 44 1255 84C1263 35 1402 35 1410 84C1412 33 1438 33 1440 84V120Z"/>
-      <path class="c-front" d="M0 120V104C6 74 114 74 120 104C126 77 239 77 245 104C250 61 344 61 349 104C354 67 450 67 455 104C462 77 585 77 592 104C599 72 717 72 724 104C729 76 821 76 826 104C832 65 947 65 953 104C958 71 1052 71 1057 104C1062 61 1157 61 1162 104C1168 77 1283 77 1289 104C1296 75 1418 75 1425 104C1426 60 1439 60 1440 104V120Z"/>
-    </svg>
+<section class="page-band">
+  <div class="wrap wrap--inner">
+    <h1>Order a Pickup</h1>
+    <nav class="crumb" aria-label="Breadcrumb"><a href="index.html" aria-label="Home"><svg aria-hidden="true" focusable="false" viewBox="0 0 62.0 37.0" width="62" height="37"><path fill="currentColor" d="M7.07 24.70L12.55 19.14L7.07 13.66C7.01 13.32 7.22 13.46 7.44 13.44C7.79 13.41 8.46 13.38 8.77 13.44C9.53 13.59 13.60 18.42 14.62 19.14L9.14 24.62L7.07 24.70"/><path fill="currentColor" d="M28.95 32.85C28.41 32.65 27.93 32.27 27.86 31.67L27.88 20.96L40.27 10.81L52.61 20.96L52.63 31.67C52.56 32.27 52.08 32.65 51.54 32.85L42.95 32.85L42.95 24.60L37.54 24.60L37.54 32.85L28.95 32.85"/><path fill="currentColor" d="M57.57 19.53C57.12 19.92 56.24 21.40 55.70 21.49C55.54 21.51 55.36 21.50 55.21 21.44L40.42 9.11L40.21 9.04L25.27 21.44C24.95 21.57 24.63 21.49 24.37 21.26C24.22 21.14 23.00 19.65 22.96 19.53C22.86 19.22 22.91 18.91 23.13 18.68C28.46 14.32 33.66 9.80 39.05 5.52C40.02 5.07 41.14 5.19 41.97 5.87L47.08 10.13L47.08 5.97C47.08 5.67 47.43 5.36 47.72 5.33C49.05 5.17 50.69 5.45 52.05 5.32C52.31 5.35 52.51 5.56 52.61 5.78L52.64 14.75C54.24 16.18 55.99 17.46 57.57 18.92L57.57 19.53"/></svg></a></nav>
   </div>
 </section>
 
-<section class="section" aria-labelledby="order-title">
-  <div class="container order-layout">
-    <div class="form-card reveal">
-      <h2 id="order-title" style="font-size:clamp(1.5rem,1.2rem + 1.2vw,2rem)">Pickup details</h2>
-      <p class="lead" style="font-size:1rem">It takes about a minute. We’ll confirm your pickup time with you.</p>
+<section class="form-section" aria-labelledby="order-title">
+  <div class="wrap form-layout">
+    <div class="form-card">
+      <h2 class="h-sm" id="order-title">Pickup details</h2>
+      <p style="margin-bottom:20px;font-size:16px">It takes about a minute. We’ll confirm your pickup time with you.</p>
       <form data-form="order" data-subject="Pickup request — Swift Laundry Services" action="#" method="post">
         <div class="form-grid">
           <fieldset class="fieldset" data-require-one="Please choose at least one service." data-summary-group data-summary-label="Services">
@@ -94,6 +83,7 @@
               <label class="choice"><input type="checkbox" name="service" value="wash-fold" data-label="Wash &amp; Fold" data-prefill="service"><span>Wash &amp; Fold</span></label>
               <label class="choice"><input type="checkbox" name="service" value="dry-cleaning" data-label="Dry Cleaning" data-prefill="service"><span>Dry Cleaning</span></label>
               <label class="choice"><input type="checkbox" name="service" value="ironing" data-label="Ironing" data-prefill="service"><span>Ironing</span></label>
+              <label class="choice"><input type="checkbox" name="service" value="other" data-label="Something else" data-prefill="service"><span>Something else</span></label>
             </div>
             <span class="field-error" aria-live="polite"></span>
           </fieldset>
@@ -106,7 +96,7 @@
             </div>
           </fieldset>
         </div>
-        <div class="form-grid form-grid--2" style="margin-top:1.25rem">
+        <div class="form-grid form-grid--2" style="margin-top:20px">
           <div class="field">
           <label for="o-name">Full name</label>
           <input class="input" id="o-name" name="o-name" type="text" required autocomplete="name" aria-describedby="o-name-error">
@@ -154,85 +144,51 @@
         </div>
           <div class="field span-2">
           <label for="o-notes">Notes for our team <span class="optional">(optional)</span></label>
-          <textarea class="textarea" id="o-notes" name="o-notes" aria-describedby="o-notes-error" placeholder="Gate code, special items, stains to look at…"></textarea>
+          <textarea class="textarea" id="o-notes" name="o-notes" aria-describedby="o-notes-error" placeholder="Gate code, special items, stains to look at, or a free-quote request…"></textarea>
           <span class="field-error" id="o-notes-error" aria-live="polite"></span>
         </div>
         </div>
         <div class="form-actions">
-          <button class="btn btn--primary" type="submit">Request pickup <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          <button class="btn btn--purple" type="submit">Request pickup</button>
           <small>No payment is taken online.</small>
         </div>
       </form>
     </div>
-    <aside class="aside-stack" aria-label="Order summary">
-      <div class="aside-card on-dark reveal">
-        <h3>Wash &amp; Fold pricing</h3>
-        <ul class="check-list">
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Single Load · ½ bag (1–10 lbs) — <strong data-price="washFold.0.price">$41.99</strong></span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Couple Load · 1 bag (10–25 lbs) — <strong data-price="washFold.1.price">$56.99</strong></span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Family Load · 2 bags (25–40 lbs) — <strong data-price="washFold.2.price">$79.99</strong></span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Extra weight <span data-price="extraPerLb">$1.90</span>/lb, weighed at pickup</span></li>
-        </ul>
-        <a href="services.html">All services &amp; prices</a>
-      </div>
-      <div class="card reveal">
-        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-        <h3>Prefer to book by phone?</h3>
-        <p>Call or text us and we’ll set up your pickup.</p>
-        <a class="btn btn--outline btn--sm" href="tel:+17144027530" data-href="tel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-bind="phone">(714) 402-7530</span></a>
-      </div>
+    <aside class="aside-card" aria-label="Wash &amp; Fold pricing">
+      <h3>Wash &amp; Fold pricing</h3>
+      <ul>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Single Load · ½ bag (1–10 lbs) — <strong data-price="washFold.0.price">$41.99</strong></span></li>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Couple Load · 1 bag (10–25 lbs) — <strong data-price="washFold.1.price">$56.99</strong></span></li>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Family Load · 2 bags (25–40 lbs) — <strong data-price="washFold.2.price">$79.99</strong></span></li>
+        <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Extra weight <span data-price="extraPerLb">$1.90</span>/lb, weighed at pickup</span></li>
+      </ul>
+      <a class="btn btn--cyan btn--block" href="tel:+17144027530" data-href="tel">Call <span data-bind="phone">(714) 402-7530</span></a>
+      <p style="margin-top:14px;font-size:15px"><a href="services.html">All services &amp; prices</a></p>
     </aside>
   </div>
 </section>
 </main>
-<footer class="site-footer on-dark">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/img/logo-white.svg" alt="Swift Laundry Services" width="170" height="59" loading="lazy">
-        <p>Mobile laundry pickup and delivery for <span data-bind="serviceArea">Garfield Heights &amp; the Cleveland suburbs</span>. We pick up, clean and deliver — back within as little as 24 hours.</p>
-      </div>
-      <div>
-        <h2>Explore</h2>
-        <ul class="footer-links">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services &amp; Prices</a></li>
-          <li><a href="why-choose-us.html">Why Choose Us</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Get started</h2>
-        <ul class="footer-links">
-          <li><a href="order.html">Order a pickup</a></li>
-          <li><a href="contact.html?topic=quote#contact-form">Get a free quote</a></li>
-          <li><a href="contact.html">Contact us</a></li>
-          <li><a href="login.html">Login / Create account</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Contact</h2>
-        <ul class="footer-contact">
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+17144027530" data-href="tel"><span data-bind="phone">(714) 402-7530</span></a></li>
-          <li data-requires="business.email" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="#" data-href="email"><span data-bind="email"></span></a></li>
-          <li data-requires="business.address" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span data-bind="address"></span></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-bind="serviceArea">Garfield Heights &amp; the Cleveland suburbs</span></li>
-        </ul>
-        <ul class="pay-list" aria-label="Payment methods we accept">
-          <li>Cash</li><li>Card</li><li>Apple Pay</li><li>Zelle</li><li>PayPal</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; <span data-bind="year">2026</span> Swift Laundry Services. All rights reserved.</p>
-      <p>We handle the laundry, you handle life.</p>
+<footer class="site-footer">
+  <div class="wrap">
+    <a href="index.html" aria-label="Swift Laundry Services — home"><img src="assets/img/logo.svg" alt="Swift Laundry Services" width="324" height="112" loading="lazy" data-logo></a>
+    <ul class="footer-links">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="why-choose-us.html">Why Choose Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="order.html">Order a pickup</a></li>
+    </ul>
+    <div class="footer-meta">
+      <a href="tel:+17144027530" data-href="tel"><span data-bind="phone">(714) 402-7530</span></a>
+      <a href="#" data-href="email" data-requires="business.email" hidden><span data-bind="email"></span></a>
+      <ul class="footer-social" data-social-row hidden>
+        <li><a data-social="instagram" href="#" aria-label="Instagram" hidden><svg aria-hidden="true" focusable="false" viewBox="-0 -416 448 448"><path fill="currentColor" transform="scale(1,-1)" d="M224.10000610351562 307C160.5 307 109.19999694824219 255.6999969482422 109.19999694824219 192.10000610351562C109.19999694824219 128.5 160.5 77.20001220703125 224.10000610351562 77.20001220703125C287.70001220703125 77.20001220703125 339.0 128.5 339.0 192.10000610351562C339.0 255.70001220703125 287.70001220703125 307.0 224.10000610351562 307.0ZM224.10000610351562 117.39999389648438C183.0 117.39999389648438 149.40000915527344 150.89999389648438 149.40000915527344 192.09999084472656C149.40000915527344 233.29998779296875 182.90000915527344 266.79998779296875 224.10000610351562 266.79998779296875C265.29998779296875 266.79998779296875 298.79998779296875 233.29998779296875 298.79998779296875 192.09999084472656C298.79998779296875 150.89999389648438 265.1999816894531 117.39999389648438 224.09999084472656 117.39999389648438ZM370.5 311.70001220703125C370.5 296.79998779296875 358.5 284.8999938964844 343.70001220703125 284.8999938964844C328.8000183105469 284.8999938964844 316.9000244140625 296.8999938964844 316.9000244140625 311.70001220703125C316.9000244140625 326.5 328.9000244140625 338.5 343.70001220703125 338.5C358.5 338.5 370.5 326.5 370.5 311.70001220703125ZM446.6000061035156 284.5C444.8999938964844 320.3999938964844 436.70001220703125 352.20001220703125 410.3999938964844 378.3999938964844C384.1999816894531 404.6000061035156 352.3999938964844 412.79998779296875 316.5 414.6000061035156C279.5 416.70001220703125 168.60000610351562 416.70001220703125 131.60000610351562 414.6000061035156C95.80000305175781 412.8999938964844 64.0 404.70001220703125 37.69999694824219 378.5C11.399993896484375 352.29998779296875 3.29998779296875 320.5 1.4999847412109375 284.6000061035156C-0.6000213623046875 247.60000610351562 -0.6000213623046875 136.70001220703125 1.4999847412109375 99.70001220703125C3.199981689453125 63.800018310546875 11.399978637695312 32.0 37.699981689453125 5.800018310546875C63.99998474121094 -20.39996337890625 95.69998168945312 -28.5999755859375 131.59999084472656 -30.399993896484375C168.59999084472656 -32.5 279.5 -32.5 316.5 -30.399993896484375C352.3999938964844 -28.699981689453125 384.20001220703125 -20.5 410.3999938964844 5.800018310546875C436.6000061035156 32.000030517578125 444.79998779296875 63.800018310546875 446.6000061035156 99.70001220703125C448.70001220703125 136.70001220703125 448.70001220703125 247.50001525878906 446.6000061035156 284.5ZM398.79998779296875 60.0C391.0 40.399993896484375 375.8999938964844 25.29998779296875 356.1999816894531 17.399993896484375C326.6999816894531 5.699981689453125 256.6999816894531 8.399993896484375 224.0999755859375 8.399993896484375C191.49996948242188 8.399993896484375 121.39997863769531 5.79998779296875 91.99996948242188 17.399993896484375C72.39996337890625 25.199981689453125 57.299957275390625 40.29998779296875 49.39996337890625 60.0C37.69996643066406 89.5 40.39996337890625 159.5 40.39996337890625 192.10000610351562C40.39996337890625 224.70001220703125 37.799957275390625 294.79998779296875 49.39996337890625 324.20001220703125C57.19996643066406 343.8000183105469 72.29997253417969 358.9000244140625 91.99996948242188 366.8000183105469C121.49996948242188 378.5 191.49996948242188 375.8000183105469 224.0999755859375 375.8000183105469C256.6999816894531 375.8000183105469 326.79998779296875 378.4000244140625 356.1999816894531 366.8000183105469C375.79998779296875 359.0 390.8999938964844 343.9000244140625 398.79998779296875 324.20001220703125C410.5 294.70001220703125 407.79998779296875 224.70001220703125 407.79998779296875 192.10000610351562C407.79998779296875 159.5 410.5 89.4000244140625 398.79998779296875 60.0Z"/></svg></a></li>
+        <li><a data-social="facebook" href="#" aria-label="Facebook" hidden><svg aria-hidden="true" focusable="false" viewBox="0 -448 512 510"><path fill="currentColor" transform="scale(1,-1)" d="M512 192C512 333.3999938964844 397.3999938964844 448.0 256.0 448.0C114.60000610351562 448.0 0.0 333.3999938964844 0.0 192.0C0.0 72.0 82.69999694824219 -28.79998779296875 194.1999969482422 -56.5V113.79998779296875H141.39999389648438V192.0H194.1999969482422V225.6999969482422C194.1999969482422 312.79998779296875 233.60000610351562 353.20001220703125 319.20001220703125 353.20001220703125C335.4000244140625 353.20001220703125 363.4000244140625 350.0 374.9000244140625 346.79998779296875V276.0C368.9000244140625 276.6000061035156 358.4000244140625 277.0 345.3000183105469 277.0C303.3000183105469 277.0 287.1000061035156 261.1000061035156 287.1000061035156 219.8000030517578V192.0H370.70001220703125L356.3000183105469 113.79998779296875H287.0V-62.100006103515625C413.79998779296875 -46.79998779296875 512.0 61.100006103515625 512.0 192.0Z"/></svg></a></li>
+      </ul>
+      <span>&copy; <span data-bind="year">2026</span> Swift Laundry Services</span>
     </div>
   </div>
 </footer>
-<nav class="mobile-bar" aria-label="Quick actions">
-  <a class="btn btn--outline" href="tel:+17144027530" data-href="tel" aria-label="Call us on (714) 402-7530"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
-  <a class="btn btn--primary" href="order.html">Order a pickup <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-</nav>
 <script src="assets/js/site-config.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

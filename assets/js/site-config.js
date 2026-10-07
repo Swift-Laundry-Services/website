@@ -17,22 +17,29 @@ window.SWIFT_CONFIG = {
   },
 
   /* ------------------------------------------------------------------------
-     SERVICE-AREA MAP (Contact page)
-     No street address yet, so the map shows Garfield Heights & surroundings.
-     To show your real address later, swap embedUrl for a Google Maps embed:
-       "https://www.google.com/maps?q=" + encodeURIComponent("123 Main St, Garfield Heights, OH") + "&output=embed"
-     and point linkUrl at the matching map page.
+     LOGO: the owner is sending a new logo. Put the file in assets/img/
+     (SVG preferred, or a PNG at least 650px wide) and set its path here,
+     e.g. "assets/img/logo-2026.svg". Empty = current logo (assets/img/logo.svg).
      ------------------------------------------------------------------------ */
-  map: {
-    embedUrl: "https://www.openstreetmap.org/export/embed.html?bbox=-81.7600%2C41.3550%2C-81.4500%2C41.4800&layer=mapnik&marker=41.4170%2C-81.6057",
-    linkUrl: "https://www.openstreetmap.org/?mlat=41.4170&mlon=-81.6057#map=12/41.4170/-81.6057",
-    caption: "Serving Garfield Heights & the Cleveland suburbs"
+  brand: {
+    logo: ""                            // TODO(owner): new logo file path
   },
 
+  /* ------------------------------------------------------------------------
+     SERVICE-AREA MAP (Contact page, full-width like the PDF)
+     No street address yet, so the map is centred on Garfield Heights.
+     Once the address is public, change q= to it, e.g.
+       "https://maps.google.com/maps?q=" + encodeURIComponent("123 Main St, Garfield Heights, OH 44125") + "&z=14&output=embed"
+     ------------------------------------------------------------------------ */
+  map: {
+    embedUrl: "https://maps.google.com/maps?q=Garfield%20Heights%2C%20OH&z=13&output=embed"
+  },
+
+  /* Social profiles: full URLs. Icons appear on the Contact page and footer once set.
+     (There is no X / Twitter account, so the site has no X icon.) */
   social: {
-    instagram: "",                      // TODO(owner): full profile URL. Icons stay hidden while empty.
-    x: "",                              // TODO(owner)
-    facebook: ""                        // TODO(owner)
+    instagram: "",                      // TODO(owner): e.g. "https://www.instagram.com/yourhandle"
+    facebook: ""                        // TODO(owner): e.g. "https://www.facebook.com/yourpage"
   },
 
   /* ------------------------------------------------------------------------
@@ -59,42 +66,43 @@ window.SWIFT_CONFIG = {
      Set confirmed:true once the owner has checked a price.
      ------------------------------------------------------------------------ */
   pricing: {
-    washFold: [
-      { name: "Single Load", size: "½ full laundry bag", weight: "1–10 lbs", price: 41.99, bags: 0.5, confirmed: true },
-      { name: "Couple Load", size: "1 full laundry bag", weight: "10–25 lbs", price: 56.99, bags: 1, confirmed: true },
-      { name: "Family Load", size: "2 full laundry bags", weight: "25–40 lbs", price: 79.99, bags: 2, confirmed: true },
-      { name: "Duvet or Blanket", size: "Per item", weight: "", price: 41.99, bags: "duvet", confirmed: false } // TODO(owner): confirm — same value as Single Load in the concept
+    washFold: [ // names and wording as in the design PDF
+      { name: "Single Load", size: "1/2 Full Laundry Bag", weight: "1-10 lbs", price: 41.99, bags: 0.5, confirmed: true },
+      { name: "Couple Load", size: "1 Full Laundry Bag", weight: "10-25 lbs", price: 56.99, bags: 1, confirmed: true },
+      { name: "Family Load", size: "2 Full Laundry Bags", weight: "25-40 lbs", price: 79.99, bags: 2, confirmed: true },
+      { name: "Duvet or blanket", size: "", weight: "", price: 41.99, bags: "duvet", confirmed: false } // TODO(owner): confirm — same value as Single Load in the PDF
     ],
     extraPerLb: 1.90,                   // "Any additional weight will be $1.90/lb (we weigh your order at pickup)"
 
-    dryCleaning: [ // TODO(owner): ALL dry cleaning prices are placeholders from the concept (values repeat per row). Confirm each.
+    // Listed row by row as laid out in the PDF's 3-column table.
+    dryCleaning: [ // TODO(owner): ALL dry cleaning prices are placeholders from the PDF (values repeat per row). Confirm each.
       { name: "Dress Shirt", price: 11.99, confirmed: false },
       { name: "Pillow", price: 11.99, confirmed: false },
       { name: "Insulated Jacket", price: 11.99, confirmed: false },
       { name: "Blazer", price: 28.99, confirmed: false },
       { name: "Polo Shirt", price: 28.99, confirmed: false },
-      { name: "Two-Piece Suit", price: 28.99, confirmed: false },
-      { name: "Coat / Jacket – Short", price: 41.99, confirmed: false },
+      { name: "Two Piece Suit", price: 28.99, confirmed: false },
+      { name: "Coat / Jacket - Short", price: 41.99, confirmed: false },
       { name: "Jeans / Pants", price: 41.99, confirmed: false },
-      { name: "Three-Piece Suit", price: 41.99, confirmed: false },
+      { name: "Three Piece Suit", price: 41.99, confirmed: false },
       { name: "Sweater", price: 15.99, confirmed: false },
-      { name: "Coat / Jacket – Long", price: 15.99, confirmed: false },
-      { name: "Canada Goose Jacket", price: 15.99, confirmed: false },
+      { name: "Coat / Jacket - Long", price: 15.99, confirmed: false },
+      { name: "Canada goose jacket", price: 15.99, confirmed: false },
       { name: "Custom Attire", price: 37.99, confirmed: false },
       { name: "Tie", price: 37.99, confirmed: false },
-      { name: "Bridal Dress", price: 37.99, confirmed: false },
+      { name: "Bridal dress", price: 37.99, confirmed: false },
       { name: "Sleeping Bag", price: 46.99, confirmed: false },
       { name: "Dress", price: 46.99, confirmed: false },
       { name: "Scarf", price: 46.99, confirmed: false },
       { name: "Casual Clothing", price: 17.99, confirmed: false }
     ],
 
-    ironing: [ // TODO(owner): ALL ironing prices are placeholders from the concept (values repeat per row). Confirm each.
-      { name: "Dress Shirts", price: 11.99, confirmed: false },   // TODO(owner): concept lists "Dress Shirts" between "5" and "10" — single shirt?
+    ironing: [ // TODO(owner): ALL ironing prices are placeholders from the PDF (values repeat per row). Confirm each — e.g. "Dress Shirts" sits between "5" and "10" shirts at the same price.
       { name: "5 Dress Shirts", price: 11.99, confirmed: false },
+      { name: "Dress Shirts", price: 11.99, confirmed: false },
       { name: "10 Dress Shirts", price: 11.99, confirmed: false },
       { name: "Blazer", price: 28.99, confirmed: false },
-      { name: "Two-Piece Suit", price: 28.99, confirmed: false },
+      { name: "Two-piece suit", price: 28.99, confirmed: false },
       { name: "Jeans / Pants", price: 28.99, confirmed: false },
       { name: "Custom Attire", price: 41.99, confirmed: false },
       { name: "Bridal Dress", price: 41.99, confirmed: false }

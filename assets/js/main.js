@@ -54,33 +54,31 @@
   $$("[data-map-link]").forEach(function (a) { if (MAP.linkUrl) a.href = MAP.linkUrl; });
   $$("[data-map-caption]").forEach(function (el) { if (MAP.caption) el.textContent = MAP.caption; });
 
-  /* ---------- Pricing ---------- */
-  var bagSvg = function (scale) {
-    var h = Math.round(30 + scale * 22);
-    return '<svg viewBox="0 0 40 48" style="height:' + h + 'px" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14 6c0-2 2-4 6-4s6 2 6 4l-3 5h-6z" opacity=".75"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M15 11c-1-2-3-3-5-2M25 11c1-2 3-3 5-2"/><path fill="currentColor" d="M16 11h8c9 4 14 12 14 22 0 9-7 13-18 13S2 42 2 33c0-10 5-18 14-22z"/><path fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round" d="M10 26c-2 3-3 6-2 9"/></svg>';
-  };
-  var duvetSvg = '<svg viewBox="0 0 64 44" style="height:46px" aria-hidden="true" focusable="false"><rect x="3" y="18" width="58" height="22" rx="9" fill="currentColor" opacity=".55"/><rect x="5" y="6" width="54" height="20" rx="9" fill="currentColor"/><path d="M14 16h36" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/></svg>';
+  /* ---------- Logo (owner is sending a new one: set brand.logo in site-config.js) ---------- */
+  var BR = CFG.brand || {};
+  if (BR.logo) $$("img[data-logo]").forEach(function (img) { img.src = BR.logo; });
 
+  /* ---------- Pricing (layout matches the design PDF) ---------- */
+  var IMG = "assets/img/design/";
+  var art = function (it) {
+    var p = function (n, w, h, style) { return '<picture><source type="image/webp" srcset="' + IMG + n + '-' + w + '.webp"><img src="' + IMG + n + '-' + w + '.png" alt="" width="' + w + '" height="' + h + '" loading="lazy" style="' + style + '"></picture>'; };
+    if (it.bags === "duvet") return p("duvet", 268, 140, "height:calc(var(--u) * 101)");
+    if (it.bags >= 2) return '<span style="display:flex">' + p("bag", 137, 228, "height:calc(var(--u) * 164)") + '<span style="margin-left:calc(var(--u) * -49)">' + p("bag", 137, 228, "height:calc(var(--u) * 164)") + "</span></span>";
+    if (it.bags >= 1) return p("bag", 137, 228, "height:calc(var(--u) * 164)");
+    return p("bag-small", 107, 141, "height:calc(var(--u) * 101)");
+  };
   $$('[data-render="washFold"]').forEach(function (wrap) {
-    var items = P.washFold || [];
-    var featuredIdx = parseInt(wrap.getAttribute("data-featured") || "-1", 10);
-    wrap.innerHTML = items.map(function (it, i) {
-      var visual = it.bags === "duvet" ? duvetSvg : it.bags >= 2 ? bagSvg(1) + bagSvg(1) : bagSvg(it.bags);
-      var parts = String(it.price.toFixed(2)).split(".");
-      return '<article class="price-card reveal' + (i === featuredIdx ? " price-card--featured" : "") + '" style="--d:' + (i * 0.07) + 's">' +
-        '<div class="bag">' + visual + "</div>" +
-        "<h3>" + esc(it.name) + "</h3>" +
-        '<p class="size">' + esc(it.size) + "</p>" +
-        '<p class="price" aria-label="' + money(it.price) + (it.confirmed ? "" : ", price to be confirmed") + '"><sup>$</sup>' + parts[0] + "<sup>." + parts[1] + "</sup></p>" +
-        (it.weight ? '<p class="weight">' + ICON('<circle cx="12" cy="5" r="3"/><path d="M6.5 8a2 2 0 0 0-1.9 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.93-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z"/>') + esc(it.weight) + "</p>" : '<p class="weight">' + ICON(I_INFO) + (it.confirmed ? "Per item" : "Price to be confirmed") + "</p>") +
-        "</article>";
+    wrap.innerHTML = (P.washFold || []).map(function (it) {
+      return '<li class="wf"><div class="art" aria-hidden="true">' + art(it) + "</div>" +
+        '<h3 class="h-sm">' + esc(it.name) + "</h3>" +
+        '<p class="price">' + money(it.price) + (it.confirmed ? "" : '<span class="visually-hidden"> (price to be confirmed)</span>') + "</p>" +
+        (it.size ? "<p>" + esc(it.size) + "</p>" : "") + (it.weight ? "<p>" + esc(it.weight) + "</p>" : "") + "</li>";
     }).join("");
   });
-
   $$('[data-render="dryCleaning"], [data-render="ironing"]').forEach(function (list) {
     var items = P[list.getAttribute("data-render")] || [];
     list.innerHTML = items.map(function (it) {
-      return '<li><span class="name">' + esc(it.name) + '</span><span class="dots" aria-hidden="true"></span><span class="amt">' + money(it.price) + "</span></li>";
+      return '<li><span class="name">' + esc(it.name) + '</span><span class="line" aria-hidden="true"></span><span class="amt">' + money(it.price) + (it.confirmed ? "" : '<span class="visually-hidden"> (to be confirmed)</span>') + "</span></li>";
     }).join("");
   });
   $$("[data-tbc-for]").forEach(function (el) {
@@ -89,14 +87,14 @@
     el.hidden = !items.some(function (x) { return x && x.confirmed === false; });
   });
 
-  /* ---------- Header ---------- */
+  /* ---------- Header: tall on the home page until scrolled (as in the PDF) ---------- */
   var header = $(".site-header");
-  var onScroll = function () { if (header) header.classList.toggle("is-scrolled", window.scrollY > 8); };
+  var onScroll = function () { if (header) header.classList.toggle("is-scrolled", window.scrollY > 40); };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  var toggle = $(".nav-toggle");
-  var menu = $("#mobile-nav");
+  var toggle = $(".menu-toggle");
+  var menu = $("#site-menu");
   var setMenu = function (open) {
     if (!toggle || !menu) return;
     toggle.setAttribute("aria-expanded", String(open));
@@ -106,20 +104,32 @@
   if (toggle && menu) {
     toggle.addEventListener("click", function () { setMenu(toggle.getAttribute("aria-expanded") !== "true"); });
     doc.addEventListener("keydown", function (e) { if (e.key === "Escape" && !menu.hidden) { setMenu(false); toggle.focus(); } });
+    doc.addEventListener("click", function (e) { if (!menu.hidden && !menu.contains(e.target) && !toggle.contains(e.target)) setMenu(false); });
     $$("a", menu).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
-    window.addEventListener("resize", function () { if (window.innerWidth >= 1080) setMenu(false); });
   }
 
-  /* ---------- Reveal on scroll ---------- */
-  var reveals = $$(".reveal");
-  if (!reduceMotion && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); } });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("is-visible"); });
-  }
+  /* ---------- "View all industries" and other disclosure buttons ---------- */
+  $$("[data-toggle]").forEach(function (btn) {
+    var target = doc.getElementById(btn.getAttribute("aria-controls"));
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") !== "true";
+      btn.setAttribute("aria-expanded", String(open));
+      if (target) target.hidden = !open;
+    });
+  });
+
+  /* ---------- Reviews carousel (arrows appear once there is more than one review) ---------- */
+  $$("[data-carousel]").forEach(function (c) {
+    var slides = $$(".review", c);
+    if (slides.length < 2) return;
+    var i = 0;
+    var show = function (n) { i = (n + slides.length) % slides.length; slides.forEach(function (s, k) { s.hidden = k !== i; }); };
+    $$(".carousel-btn", c).forEach(function (b) {
+      b.hidden = false;
+      b.addEventListener("click", function () { show(i + (b.classList.contains("carousel-btn--next") ? 1 : -1)); });
+    });
+    show(0);
+  });
 
   /* ---------- Prefill from query string (?topic=quote, ?service=dry-cleaning) ---------- */
   try {
@@ -143,6 +153,7 @@
         $("#" + b.getAttribute("aria-controls")).hidden = !on;
       });
     };
+    if (window.location.hash === "#create") { var cb = doc.getElementById("tab-create"); if (cb) select(cb); }
     btns.forEach(function (b, i) {
       b.addEventListener("click", function () { select(b); });
       b.addEventListener("keydown", function (e) {

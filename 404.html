@@ -17,7 +17,7 @@
 <title>Page not found | Swift Laundry Services</title>
 <meta name="description" content="The page you’re looking for doesn’t exist.">
 <link rel="canonical" href="https://swift-laundry-services.github.io/website/404.html">
-<meta name="theme-color" content="#3E157B">
+<meta name="theme-color" content="#322054">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swift Laundry Services">
 <meta property="og:title" content="Page not found | Swift Laundry Services">
@@ -35,77 +35,107 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="robots" content="noindex">
 </head>
-<body>
+<body class="has-mobile-bar">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="bar">
+  <div class="container header-inner">
     <a class="brand" href="index.html" aria-label="Swift Laundry Services — home">
-      <img src="assets/img/logo.svg" alt="Swift Laundry Services" width="324" height="112" data-logo loading="lazy">
+      <img src="assets/img/logo.svg" alt="Swift Laundry Services" width="156" height="54" loading="lazy">
     </a>
     <nav class="primary-nav" aria-label="Main">
       <ul class="nav-list">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="why-choose-us.html">Why Choose Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="login.html">Login</a></li>
+          <li><a class="nav-link" href="about.html">About Us</a></li>
+          <li><a class="nav-link" href="services.html">Services</a></li>
+          <li><a class="nav-link" href="why-choose-us.html">Why Choose Us</a></li>
+          <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li><a class="nav-link" href="login.html">Login</a></li>
       </ul>
     </nav>
-    <a class="btn btn--purple header-member" href="login.html#create">Become a member</a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
-      <svg class="i-open" viewBox="0 0 22 16" aria-hidden="true" focusable="false"><path d="M0 1h22M0 8h22M0 15h22" stroke="currentColor" stroke-width="2"/></svg>
-      <svg class="i-close" viewBox="0 0 22 22" aria-hidden="true" focusable="false"><path d="M3 3l16 16M19 3 3 19" stroke="currentColor" stroke-width="2.2"/></svg>
-    </button>
-    <nav class="menu-panel" id="site-menu" aria-label="Menu" hidden>
-      <ul>
-        <li class="menu-main"><a href="about.html">About Us</a></li>
-        <li class="menu-main"><a href="services.html">Services</a></li>
-        <li class="menu-main"><a href="why-choose-us.html">Why Choose Us</a></li>
-        <li class="menu-main"><a href="contact.html">Contact Us</a></li>
-        <li><a href="login.html">Login / Create account</a></li>
-        <li><a href="order.html">Order a pickup</a></li>
-        <li><a href="tel:+17144027530" data-href="tel">Call <span data-bind="phone">(714) 402-7530</span></a></li>
-      </ul>
-      <a class="btn btn--cyan" href="login.html#create">Become a member</a>
-    </nav>
+    <div class="header-actions">
+      <a class="icon-btn header-call" href="tel:+17144027530" data-href="tel" aria-label="Call us on (714) 402-7530"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+      <a class="btn btn--primary btn--sm header-cta" href="order.html">Order a pickup</a>
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
   </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <ul>
+      <li><a href="about.html">About Us<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+      <li><a href="services.html">Services<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+      <li><a href="why-choose-us.html">Why Choose Us<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+      <li><a href="contact.html">Contact Us<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+      <li><a href="login.html">Login<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></li>
+    </ul>
+    <a class="btn btn--primary" href="order.html">Order a pickup</a>
+    <a class="btn btn--outline" href="tel:+17144027530" data-href="tel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-bind="phone">(714) 402-7530</span></a>
+  </nav>
 </header>
 <main id="main">
-<section class="notfound">
-  <div class="wrap">
+<section class="section notfound">
+  <div class="container">
     <p class="code" aria-hidden="true">404</p>
-    <h1 class="h-md">This page went missing in the wash.</h1>
-    <p style="margin-top:10px">The page you’re looking for doesn’t exist or has moved.</p>
-    <div class="btn-row">
+    <h1 style="font-size:clamp(1.8rem,1.4rem + 2vw,2.6rem)">This page went missing in the wash.</h1>
+    <p class="lead">The page you’re looking for doesn’t exist or has moved.</p>
+    <div class="btn-row" style="justify-content:center;margin-top:1.5rem">
       <a class="btn btn--purple" href="index.html">Back to home</a>
       <a class="btn btn--outline" href="order.html">Order a pickup</a>
     </div>
   </div>
 </section>
 </main>
-<footer class="site-footer">
-  <div class="wrap">
-    <a href="index.html" aria-label="Swift Laundry Services — home"><img src="assets/img/logo.svg" alt="Swift Laundry Services" width="324" height="112" loading="lazy" data-logo></a>
-    <ul class="footer-links">
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="why-choose-us.html">Why Choose Us</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-      <li><a href="order.html">Order a pickup</a></li>
-    </ul>
-    <div class="footer-meta">
-      <a href="tel:+17144027530" data-href="tel"><span data-bind="phone">(714) 402-7530</span></a>
-      <a href="#" data-href="email" data-requires="business.email" hidden><span data-bind="email"></span></a>
-      <ul class="footer-social" data-social-row hidden>
-        <li><a data-social="instagram" href="#" aria-label="Instagram" hidden><svg aria-hidden="true" focusable="false" viewBox="-0 -416 448 448"><path fill="currentColor" transform="scale(1,-1)" d="M224.10000610351562 307C160.5 307 109.19999694824219 255.6999969482422 109.19999694824219 192.10000610351562C109.19999694824219 128.5 160.5 77.20001220703125 224.10000610351562 77.20001220703125C287.70001220703125 77.20001220703125 339.0 128.5 339.0 192.10000610351562C339.0 255.70001220703125 287.70001220703125 307.0 224.10000610351562 307.0ZM224.10000610351562 117.39999389648438C183.0 117.39999389648438 149.40000915527344 150.89999389648438 149.40000915527344 192.09999084472656C149.40000915527344 233.29998779296875 182.90000915527344 266.79998779296875 224.10000610351562 266.79998779296875C265.29998779296875 266.79998779296875 298.79998779296875 233.29998779296875 298.79998779296875 192.09999084472656C298.79998779296875 150.89999389648438 265.1999816894531 117.39999389648438 224.09999084472656 117.39999389648438ZM370.5 311.70001220703125C370.5 296.79998779296875 358.5 284.8999938964844 343.70001220703125 284.8999938964844C328.8000183105469 284.8999938964844 316.9000244140625 296.8999938964844 316.9000244140625 311.70001220703125C316.9000244140625 326.5 328.9000244140625 338.5 343.70001220703125 338.5C358.5 338.5 370.5 326.5 370.5 311.70001220703125ZM446.6000061035156 284.5C444.8999938964844 320.3999938964844 436.70001220703125 352.20001220703125 410.3999938964844 378.3999938964844C384.1999816894531 404.6000061035156 352.3999938964844 412.79998779296875 316.5 414.6000061035156C279.5 416.70001220703125 168.60000610351562 416.70001220703125 131.60000610351562 414.6000061035156C95.80000305175781 412.8999938964844 64.0 404.70001220703125 37.69999694824219 378.5C11.399993896484375 352.29998779296875 3.29998779296875 320.5 1.4999847412109375 284.6000061035156C-0.6000213623046875 247.60000610351562 -0.6000213623046875 136.70001220703125 1.4999847412109375 99.70001220703125C3.199981689453125 63.800018310546875 11.399978637695312 32.0 37.699981689453125 5.800018310546875C63.99998474121094 -20.39996337890625 95.69998168945312 -28.5999755859375 131.59999084472656 -30.399993896484375C168.59999084472656 -32.5 279.5 -32.5 316.5 -30.399993896484375C352.3999938964844 -28.699981689453125 384.20001220703125 -20.5 410.3999938964844 5.800018310546875C436.6000061035156 32.000030517578125 444.79998779296875 63.800018310546875 446.6000061035156 99.70001220703125C448.70001220703125 136.70001220703125 448.70001220703125 247.50001525878906 446.6000061035156 284.5ZM398.79998779296875 60.0C391.0 40.399993896484375 375.8999938964844 25.29998779296875 356.1999816894531 17.399993896484375C326.6999816894531 5.699981689453125 256.6999816894531 8.399993896484375 224.0999755859375 8.399993896484375C191.49996948242188 8.399993896484375 121.39997863769531 5.79998779296875 91.99996948242188 17.399993896484375C72.39996337890625 25.199981689453125 57.299957275390625 40.29998779296875 49.39996337890625 60.0C37.69996643066406 89.5 40.39996337890625 159.5 40.39996337890625 192.10000610351562C40.39996337890625 224.70001220703125 37.799957275390625 294.79998779296875 49.39996337890625 324.20001220703125C57.19996643066406 343.8000183105469 72.29997253417969 358.9000244140625 91.99996948242188 366.8000183105469C121.49996948242188 378.5 191.49996948242188 375.8000183105469 224.0999755859375 375.8000183105469C256.6999816894531 375.8000183105469 326.79998779296875 378.4000244140625 356.1999816894531 366.8000183105469C375.79998779296875 359.0 390.8999938964844 343.9000244140625 398.79998779296875 324.20001220703125C410.5 294.70001220703125 407.79998779296875 224.70001220703125 407.79998779296875 192.10000610351562C407.79998779296875 159.5 410.5 89.4000244140625 398.79998779296875 60.0Z"/></svg></a></li>
-        <li><a data-social="facebook" href="#" aria-label="Facebook" hidden><svg aria-hidden="true" focusable="false" viewBox="0 -448 512 510"><path fill="currentColor" transform="scale(1,-1)" d="M512 192C512 333.3999938964844 397.3999938964844 448.0 256.0 448.0C114.60000610351562 448.0 0.0 333.3999938964844 0.0 192.0C0.0 72.0 82.69999694824219 -28.79998779296875 194.1999969482422 -56.5V113.79998779296875H141.39999389648438V192.0H194.1999969482422V225.6999969482422C194.1999969482422 312.79998779296875 233.60000610351562 353.20001220703125 319.20001220703125 353.20001220703125C335.4000244140625 353.20001220703125 363.4000244140625 350.0 374.9000244140625 346.79998779296875V276.0C368.9000244140625 276.6000061035156 358.4000244140625 277.0 345.3000183105469 277.0C303.3000183105469 277.0 287.1000061035156 261.1000061035156 287.1000061035156 219.8000030517578V192.0H370.70001220703125L356.3000183105469 113.79998779296875H287.0V-62.100006103515625C413.79998779296875 -46.79998779296875 512.0 61.100006103515625 512.0 192.0Z"/></svg></a></li>
-      </ul>
-      <span>&copy; <span data-bind="year">2026</span> Swift Laundry Services</span>
+<footer class="site-footer on-dark">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-white.svg" alt="Swift Laundry Services" width="170" height="59" loading="lazy">
+        <p>Mobile laundry pickup and delivery for <span data-bind="serviceArea">Garfield Heights &amp; the Cleveland suburbs</span>. We pick up, clean and deliver — back within as little as 24 hours.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services &amp; Prices</a></li>
+          <li><a href="why-choose-us.html">Why Choose Us</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Get started</h2>
+        <ul class="footer-links">
+          <li><a href="order.html">Order a pickup</a></li>
+          <li><a href="contact.html?topic=quote#contact-form">Get a free quote</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="login.html">Login / Create account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul class="footer-contact">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+17144027530" data-href="tel"><span data-bind="phone">(714) 402-7530</span></a></li>
+          <li data-requires="business.email" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="#" data-href="email"><span data-bind="email"></span></a></li>
+          <li data-requires="business.address" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span data-bind="address"></span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-bind="serviceArea">Garfield Heights &amp; the Cleveland suburbs</span></li>
+        </ul>
+        <ul class="pay-list" aria-label="Payment methods we accept">
+          <li>Cash</li><li>Card</li><li>Apple Pay</li><li>Zelle</li><li>PayPal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span data-bind="year">2026</span> Swift Laundry Services. All rights reserved.</p>
+      <p>We handle the laundry, you handle life.</p>
     </div>
   </div>
 </footer>
+<nav class="mobile-bar" aria-label="Quick actions">
+  <a class="btn btn--outline" href="tel:+17144027530" data-href="tel" aria-label="Call us on (714) 402-7530"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+  <a class="btn btn--primary" href="order.html">Order a pickup <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</nav>
 <script>["assets/js/site-config.js","assets/js/main.js"].forEach(function (src) { var s = document.createElement("script"); s.src = src; s.async = false; document.body.appendChild(s); });</script>
 </body>
 </html>

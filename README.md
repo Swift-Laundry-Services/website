@@ -26,10 +26,9 @@ assets/
   css/styles.css      All styles (design tokens / brand colours at the top)
   js/site-config.js   <- business details, prices, form targets: EDIT HERE
   js/main.js          Behaviour (menu, forms, price tables, animations)
-  fonts/              Self-hosted Montserrat (variable, latin), SIL OFL
+  fonts/              Self-hosted Montserrat + Inter (variable, latin), SIL OFL
   img/                Logos, icons, Open Graph image
-  img/design/         Images extracted from the owner's design PDF (WebP sizes + JPG/PNG fallback)
-  img/design/icons/   SVG icons (PDF vectors + Font Awesome brand icons)
+  img/photos/         Photography (WebP 480/800/1200 + JPG 800 fallback)
 .github/workflows/pages.yml   GitHub Pages deployment
 ```
 
@@ -82,21 +81,16 @@ The **Login / Create account** page is a placeholder. Submitting shows "Customer
 
 ### Service-area map (Contact page)
 
-The Contact page shows a keyless Google Maps embed centred on Garfield Heights, OH (no public street address yet).
-Change `map.embedUrl` in `site-config.js` (e.g. `https://maps.google.com/maps?q=123+Main+St,+Garfield+Heights,+OH&z=15&output=embed`)
-and `map.linkUrl` once there is an address. No API key needed.
+The Contact page shows a keyless OpenStreetMap embed centred on Garfield Heights, OH, because there is no public street address yet.
+To show the real address, set `map.embedUrl` in `site-config.js` to a Google Maps embed, for example
+`https://www.google.com/maps?q=123+Main+St,+Garfield+Heights,+OH&output=embed`, and point `map.linkUrl` at the matching
+map page. `map.caption` changes the caption under the map. No API key is needed for either option.
 
-### Logo, email and social links
+### Photos
 
-- `brand.logo`: path to a new logo image (e.g. `assets/img/logo-new.png`). Empty = current logo.
-- `contact.email`: shown on the Contact page; empty shows "Coming soon".
-- `social.instagram` / `social.facebook`: full profile URLs. Icons stay hidden until set. X/Twitter is intentionally not shown.
-
-### Images
-
-All images come from the owner's design PDF and live in `assets/img/design/` as `NAME-WIDTH.webp` plus a fallback
-(`.jpg`, or `.png` for the transparent bag/duvet images). `tools/make_design_images.py` regenerates them. To replace one,
-export files with the same names and widths and update the `alt` text if the subject changes.
+Photos live in `assets/img/photos/` as `NAME-480.webp`, `NAME-800.webp`, `NAME-1200.webp` and a `NAME-800.jpg` fallback,
+all 3:2. To replace a photo, export new files with the **same names and sizes** and nothing else needs to change.
+If you change what a photo shows, also update its `alt` text in the HTML.
 
 ### Switching to the custom domain later
 
@@ -120,7 +114,7 @@ When `swiftlaundryservices.com` is pointed at GitHub Pages:
 | Light blue | `#8FDDF6` | Derived |
 | Tints | `#EEE9F7`, `#F7F5FB`, `#DDF5FD`, `#F0FAFE` | Derived |
 
-Fonts: **Montserrat** (weights 500–800), self-hosted, as in the design PDF.
+Fonts: **Montserrat** (headings, the same family as the logo wordmark) and **Inter** (body), both self-hosted.
 
 ### Logo files (`assets/img/`)
 
@@ -132,22 +126,25 @@ Fonts: **Montserrat** (weights 500–800), self-hosted, as in the design PDF.
 
 ## Image credits
 
-Photos and icons are taken from the owner-supplied design PDF (Swift Laundry Services). Confirm the owner holds the rights
-to the stock photos used in that PDF.
-Social icons: [Font Awesome Free](https://fontawesome.com/license/free) brand icons, CC BY 4.0.
-Map: © Google (embedded map).
-Fonts: [Montserrat](https://github.com/JulietaUla/Montserrat), SIL Open Font License 1.1 (see `assets/fonts/`).
+Photos are free stock photos from [Pexels](https://www.pexels.com), used under the
+[Pexels License](https://www.pexels.com/license/) (free for commercial use, no attribution required; credited here anyway).
+They are **not AI-generated** and **not photos of the Swift Laundry Services team**. They are illustrative only, so swap in real
+photos of your team, van and work whenever you have them (same file names, see "Photos" above).
 
-## Owner TODO
+| File (`assets/img/photos/`) | Used on | Photographer | Source |
+| --- | --- | --- | --- |
+| `photo-schedule` | How it works, step 1 (Home, Why choose us) | Ron Lach | [Pexels 9603489](https://www.pexels.com/photo/person-holding-white-leather-tote-bag-9603489/) |
+| `photo-pickup` | How it works, step 2; Why choose us, "Flexible subscriptions" | Karolina Grabowska (Kaboompics) | [Pexels 4959868](https://www.pexels.com/photo/photo-of-a-person-s-hands-holding-a-basket-4959868/) |
+| `photo-care` | How it works, step 3; About, sidebar; Why choose us, "Personalized local care" | cottonbro studio | [Pexels 6466227](https://www.pexels.com/photo/person-holding-a-stack-of-white-towels-6466227/) |
+| `photo-delivered` | How it works, step 4 | RDNE Stock project | [Pexels 8581029](https://www.pexels.com/photo/folded-garments-held-by-a-person-8581029/) |
+| `photo-wash-fold` | Wash & Fold service card (Home, Services) | Berna | [Pexels 35009420](https://www.pexels.com/photo/stack-of-folded-corduroy-fabrics-in-neutral-tones-35009420/) |
+| `photo-dry-cleaning` | Dry Cleaning service card (Home, Services) | Craig Adderley | [Pexels 1682699](https://www.pexels.com/photo/close-up-photo-of-hang-clothes-in-wardrobe-1682699/) |
+| `photo-ironing` | Ironing service card (Home, Services) | cottonbro studio | [Pexels 5901624](https://www.pexels.com/photo/man-with-iron-5901624/) |
+| `photo-folded-shirts` | Home, "Why choose Swift" panel | Polina Tankilevitch | [Pexels 4440574](https://www.pexels.com/photo/a-person-holding-a-stack-of-neatly-folded-shirts-4440574/) |
+| `photo-team` | About, "Who we are" | Tima Miroshnichenko | [Pexels 8774441](https://www.pexels.com/photo/person-in-blue-and-white-pants-standing-beside-white-metal-cart-8774441/) |
+| `photo-towels` | Why choose us, "Transparent pricing" | Karolina Grabowska (Kaboompics) | [Pexels 4210372](https://www.pexels.com/photo/stack-of-light-beige-towels-on-white-stool-4210372/) |
+| `photo-eco` | Why choose us, "Eco-friendly options" | Ron Lach | [Pexels 10566526](https://www.pexels.com/photo/close-up-view-of-cleaning-products-10566526/) |
 
-1. Confirm all prices (Wash & Fold, Dry Cleaning, Ironing, duvet price): marked "to be confirmed" on the site.
-2. Supply real "About us" / "What do we offer?" copy (design PDF used lorem ipsum; placeholder copy is ours).
-3. Text for the 3rd "Why choose" item (PDF repeats "Save Time").
-4. FAQ answers, and the "Limitations" sub-items (size, weight, unsanitary laundry) wording.
-5. Confirm or remove the extra services ("More ways we can help": commercial, Airbnb/rental linens, event linens,
-   delicates, sports uniforms, alterations) and the 7 extra industries behind "View all industries", and give their prices.
-6. More real customer reviews (only one is shown).
-7. New logo file → `brand.logo`; email → `contact.email`; Instagram/Facebook URLs → `social`.
-8. Street address (for the Contact card and map), if you want one public.
-9. Confirm rights to the stock photos inside the design PDF.
-10. Custom domain: not configured on purpose; decide before pointing swiftlaundryservices.com here.
+Map data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors (shown inside the map embed).
+Icons are drawn in the style of, and partly adapted from, [Lucide](https://lucide.dev) (ISC licence).
+Fonts: [Montserrat](https://github.com/JulietaUla/Montserrat) and [Inter](https://github.com/rsms/inter), SIL Open Font License 1.1 (see `assets/fonts/`).

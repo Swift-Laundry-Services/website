@@ -1,3 +1,8 @@
+/*!
+ * Swift Laundry Services website
+ * Designed & developed by Innocent Christo
+ * © 2026 Innocent Christo. All rights reserved.
+ */
 /* Swift Laundry Services — site behaviour (vanilla JS, no dependencies).
    Business details, prices and form targets live in site-config.js. */
 (function () {

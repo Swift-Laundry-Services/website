@@ -148,3 +148,8 @@ photos of your team, van and work whenever you have them (same file names, see "
 Map data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors (shown inside the map embed).
 Icons are drawn in the style of, and partly adapted from, [Lucide](https://lucide.dev) (ISC licence).
 Fonts: [Montserrat](https://github.com/JulietaUla/Montserrat) and [Inter](https://github.com/rsms/inter), SIL Open Font License 1.1 (see `assets/fonts/`).
+
+## Author / Credits
+
+Designed and developed by **Innocent Christo** for Swift Laundry Services.  
+© 2026 Innocent Christo. See `humans.txt`.

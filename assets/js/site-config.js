@@ -34,7 +34,11 @@ window.SWIFT_CONFIG = {
     caption: "Serving Garfield Heights & the Cleveland suburbs"
   },
 
-  social: {
+  /* PICKUP TIME SLOTS (Order page). Each start time becomes a 1-hour slot, e.g. "9:00 AM" shows as "9:00 AM – 10:00 AM".
+     TODO(owner): confirm your real pickup hours. Use the format "9:30 AM". */
+  pickup: { slotMinutes: 60, morning: ["9:00 AM", "10:00 AM", "11:00 AM"], afternoon: ["1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"] },
+
+    social: {
     instagram: "https://www.instagram.com/swiftlaundryservicess/",
     facebook: "https://www.facebook.com/search/top?q=Swift%20Laundry%20Garfield%20Heights"  // TODO: replace with the page's direct URL (facebook.com/<page>) once confirmed
   },
